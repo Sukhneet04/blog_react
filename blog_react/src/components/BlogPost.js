@@ -1,18 +1,16 @@
-// BlogPost.js
+// src/components/BlogPost.js
 import React from 'react';
 import './BlogPost.css';
+import LikeCounter from './LikeCounter'; // Import LikeCounter
 
 const BlogPost = ({ title, date, author, image, body }) => {
   return (
-    <div className="blogpost">
-      <h2 className="title">{title}</h2>
-      <div className="meta">
-        <span className="date">{date}</span>
-        <span className="author">{author}</span>
-      </div>
-      <img src={image} alt="Post" className="image" />
-      <p className="body">{body}</p>
-      <hr />
+    <div className="blog-post">
+      <h2>{title}</h2>
+      <p>{date} by {author}</p>
+      <img src={image} alt={title} />
+      <p>{body}</p>
+      <LikeCounter /> {/* Use LikeCounter */}
     </div>
   );
 };
